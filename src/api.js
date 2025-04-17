@@ -51,7 +51,7 @@ export const getAccessToken = async () => {
    const code = await searchParams.get("code");
    if (!code) {
      const response = await fetch(
-       " https://5twp0s8il5.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
+       "https://5twp0s8il5.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
      );
      const result = await response.json();
      const { authUrl } = result;
@@ -85,7 +85,7 @@ const removeQuery = () => {
   try {
     const encodeCode = encodeURIComponent(code);
  
-    const response = await fetch( 'YOUR_GET_ACCESS_TOKEN_ENDPOINT' + '/' + encodeCode);
+    const response = await fetch("https://5twp0s8il5.execute-api.us-east-1.amazonaws.com/dev/api/token" + '/' + encodeCode);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`)
     }
