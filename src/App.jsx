@@ -5,7 +5,6 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { useEffect, useState } from 'react';
 import { extractLocations, getEvents } from './api';
-import { fetchEvents } from './api';
 
 
 import './App.css';
@@ -20,7 +19,7 @@ const App = () => {
 
  useEffect(() => {
    fetchData();
- }, [currentCity, currentNOE]);
+ }, [currentCity]);
 
 
  const fetchData = async () => {
@@ -36,9 +35,7 @@ const App = () => {
  return (
    <div className="App">
     <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
-    <NumberOfEvents
-    currentNOE={currentNOE}
-    setCurrentNOE={setCurrentNOE}/>
+    <NumberOfEvents currentNOE={currentNOE} setCurrentNOE={setCurrentNOE} />
      <EventList events={events}/>
    </div>
  );

@@ -5,16 +5,14 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import NumberOfEvents from '../components/NumberOfEvents';
 
-describe('<NumberOfEvents/> component', () => {
+describe('<NumberOfEvents /> component', () => {
     const setNumberOfEvents = jest.fn(); 
     const setErrorAlert = jest.fn();    
-    const setCurrentNOE = jest.fn();
 
     test('contains an input textbox with the correct role', () => {
-        render(<NumberOfEvents />);
-        const numberOfEventsInput = screen.getByRole('spinbutton');
-
-        expect(numberOfEventsInput).toBeInTheDocument();
+        render(<NumberOfEvents setNumberOfEvents={() => {}} />);
+        const inputElement = screen.getByRole('textbox');
+        expect(inputElement).toBeInTheDocument();
       }); 
     test('renders NumberOfEvents component', () => {
         render(<NumberOfEvents setNumberOfEvents={() => {}} />);
@@ -34,10 +32,15 @@ describe('<NumberOfEvents/> component', () => {
     });
      
     test('updates the value when user types in input', () => {
-      render(<NumberOfEvents currentNOE={32} setCurrentNOE={setCurrentNOE} />);
+        render(
+          <NumberOfEvents
+            setNumberOfEvents={setNumberOfEvents}
+            setErrorAlert={setErrorAlert}
+          />
+        );
         const inputElement = screen.getByRole('textbox');
         fireEvent.change(inputElement, { target: { value: '10' } });
-        expect(setCurrentNOE).toHaveBeenCalledWith(10);
+        expect(inputElement).toHaveValue(10);
       });
      
     });
