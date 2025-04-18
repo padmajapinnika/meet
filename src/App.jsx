@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { extractLocations, getEvents } from './api';
 
 
+
 import './App.css';
 
 
@@ -19,7 +20,7 @@ const App = () => {
 
  useEffect(() => {
    fetchData();
- }, [currentCity]);
+ }, [currentCity, currentNOE]);
 
 
  const fetchData = async () => {

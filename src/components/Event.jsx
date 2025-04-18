@@ -7,7 +7,7 @@ const Event = ({ event }) => {
   };
 
   return (
-    <li>
+    <li className="event" data-testid="event-item">
       <h2>{event.summary}</h2>
       <p>{new Date(event.created).toString()}</p>
       <p>{event.location}</p>

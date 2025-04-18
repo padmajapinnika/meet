@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+const NumberOfEvents = ({ currentNOE = 32, setCurrentNOE }) => {
+  const [number, setNumber] = useState(currentNOE);
 
-const NumberOfEvents = ({ setNumberOfEvents }) => {
-  const [number, setNumber] = useState(32); // default value
+  useEffect(() => {
+    setNumber(currentNOE);
+  }, [currentNOE]);
 
   const handleInputChanged = (event) => {
     const value = parseInt(event.target.value);
     setNumber(value);
-    if (setNumberOfEvents) {
-      setNumberOfEvents(value);
+    if (setCurrentNOE) {
+      setCurrentNOE(value);
     }
   };
 
@@ -22,7 +25,7 @@ const NumberOfEvents = ({ setNumberOfEvents }) => {
         onChange={handleInputChanged}
         min="1"
         role="textbox"
-        data-testid="number-of-events-input"
+        aria-label="Number of events"
       />
     </div>
   );
