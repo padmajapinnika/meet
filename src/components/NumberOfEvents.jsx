@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 
-const NumberOfEvents = ({ setNumberOfEvents }) => {
+const NumberOfEvents = ({ currentNOE, setCurrentNOE  }) => {
   const [number, setNumber] = useState(32); // default value
 
   const handleInputChanged = (event) => {
     const value = parseInt(event.target.value);
     setNumber(value);
-    if (setNumberOfEvents) {
-      setNumberOfEvents(value);
+    if (!isNaN(value) && value > 0) {
+      setCurrentNOE(value);
     }
   };
 
@@ -16,14 +16,16 @@ const NumberOfEvents = ({ setNumberOfEvents }) => {
     <div id="number-of-events" data-testid="number-of-events">
       <label htmlFor="num-events-input">Number of events:</label>
       <input
-        id="num-events-input"
         type="number"
+        data-testid="number-of-events-input"
+        id="num-events-input"
+        min="1"
         value={number}
         onChange={handleInputChanged}
-        min="1"
-        role="textbox"
-        data-testid="number-of-events-input"
       />
+
+
+     
     </div>
   );
 };

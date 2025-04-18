@@ -1,8 +1,9 @@
-import { render, within} from '@testing-library/react';
+import { render, screen, within, waitFor } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { getEvents } from '../api';
 import App from './../App';
+
 
 describe('<App /> component', () => {
   let AppDOM;
@@ -50,4 +51,5 @@ describe('<App /> integration', () => {
       expect(event.textContent).toContain("Berlin, Germany");
     });
   });
-});
+})
+
