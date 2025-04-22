@@ -11,7 +11,7 @@ const Event = ({ event }) => {
       <h2>{event.summary}</h2>
       <p>{new Date(event.created).toString()}</p>
       <p>{event.location}</p>
-      <button onClick={handleToggleDetails}>
+      <button  className="details-btn" onClick={handleToggleDetails}>
         {showDetails ? 'Hide Details' : 'Show Details'}
       </button>
       {showDetails && <p data-testid="event-description"> {event.description}</p>} {/* Event description is shown or hidden */}

@@ -30,7 +30,7 @@ describe('<Event /> component', () => {
       });
 
 
-test("hides the details section when the user clicks on the 'Hide Details' button", async () => {
+    test("hides the details section when the user clicks on the 'Hide Details' button", async () => {
     const user = userEvent.setup();
 
     // First, show the details by clicking the "Show Details" button
@@ -46,7 +46,7 @@ test("hides the details section when the user clicks on the 'Hide Details' butto
     expect(EventComponent.queryByText('Show Details')).toBeInTheDocument();
 });
 // Test 1: Shows the details section when the user clicks on the 'Show Details' button
-test("shows the details section when the user clicks on the 'Show Details' button", async () => {
+  test("shows the details section when the user clicks on the 'Show Details' button", async () => {
     const user = userEvent.setup();
 
     // Click the "Show Details" button

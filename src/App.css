@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -41,7 +42,6 @@
 .read-the-docs {
   color: #888;
 }
-
 /* Styling for the CitySearch component */
 #city-search {
   margin-top: 20px;
@@ -208,7 +208,6 @@
 #event-list li {
   margin-bottom: 1rem;
 }
-
 #event-list li:last-child {
   margin-bottom: 0; /* Remove margin from the last item */
 }
