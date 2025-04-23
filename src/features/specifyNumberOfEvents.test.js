@@ -25,7 +25,7 @@ defineFeature(feature, test => {
 
         then(/^the user should see (\d+) events displayed by default$/,async(arg0) => {
             await waitFor(() => {
-                const eventItems = screen.getAllByRole('listitem');
+                const eventItems = screen.getAllByTestId('event-item');
                 expect(eventItems.length).toBe(parseInt(arg0, 10));
               });
         });
@@ -46,7 +46,7 @@ defineFeature(feature, test => {
 
         then('that number of events should be displayed', async () => {
             await waitFor(() => {
-              const eventItems = screen.getAllByRole('listitem');
+              const eventItems = screen.getAllByTestId('event-item');
               expect(eventItems.length).toBe(10);
             });
           });

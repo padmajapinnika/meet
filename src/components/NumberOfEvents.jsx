@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const NumberOfEvents = ({ currentNOE = 32, setCurrentNOE }) => {
+const NumberOfEvents = ({ currentNOE = 32, setCurrentNOE, setErrorText }) => {
   const [number, setNumber] = useState(32);
 
   useEffect(() => {
@@ -8,16 +8,20 @@ const NumberOfEvents = ({ currentNOE = 32, setCurrentNOE }) => {
   }, [currentNOE]);
 
   const handleInputChanged = (event) => {
-    const value = parseInt(event.target.value);
-    if (!isNaN(value)) {
-      setNumber(value);
-      if (setCurrentNOE) {
-        setCurrentNOE(value);
-      }
-    } else {
-      setNumber('');
+    const value = Number(event.target.value);
+    setNumber(value);
+    setCurrentNOE && setCurrentNOE(value);
+  
+    let errorText = '';
+    if (isNaN(value)) {
+      errorText = 'Please enter a valid number to see the events';
+    } else if (value < 1) {
+      errorText = 'Please enter a number greater than zero to see the events';
     }
+  
+    setErrorText && setErrorText(errorText);
   };
+  
   
   return (
     <div id="number-of-events" data-testid="number-of-events">
