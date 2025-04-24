@@ -11,7 +11,7 @@ describe('show/hide event details', () => {
       timeout: 0   // disables Puppeteer timeout
     });
     page = await browser.newPage();
-    await page.goto('http://localhost:5174/');
+    await page.goto('http://localhost:5173/');
     await page.waitForSelector('.event');
   });
 
