@@ -11,5 +11,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 );
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.register({});
 //atatus.notify(new Error('Test Atatus Setup'));
