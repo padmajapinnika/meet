@@ -30,21 +30,36 @@ const checkToken = async (accessToken) => {
 export const getEvents = async () => {
   NProgress.start();
 
+  if (!navigator.onLine) {
+    const events = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return events ? JSON.parse(events) : [];
+  }
+
   if (window.location.href.startsWith("http://localhost")) {
     NProgress.done();
     return mockData;
   }
+
   const token = await getAccessToken();
   if (token) {
     removeQuery();
     const url =  "https://5twp0s8il5.execute-api.us-east-1.amazonaws.com/dev/api/get-events" + "/" + token;
     const response = await fetch(url);
     const result = await response.json();
+
     if (result) {
+      localStorage.setItem("lastEvents", JSON.stringify(result.events)); // <-- ✅ Save to localStorage
+      NProgress.done();
       return result.events;
-    } else return null;
+    } else {
+      NProgress.done();
+      return null;
+    }
   }
- };
+
+  NProgress.done();
+};
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
   const tokenCheck = accessToken && (await checkToken(accessToken));
