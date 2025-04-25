@@ -9,6 +9,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "cross-env NODE_NO_WARNINGS=1 jest --watch",
+    "predeploy": "BASE_URL=/meet/ npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
