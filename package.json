@@ -2,6 +2,7 @@
   "name": "meet",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://padmajapinnika.github.io/meet",
   "type": "module",
   "scripts": {
     "dev": "vite",
