@@ -1,11 +1,10 @@
-
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { VitePWA } from 'vite-plugin-pwa';
 
 
 export default defineConfig({
-  base: '/',
+ base: '/',
  plugins: [
    react(),
    VitePWA({
@@ -38,7 +37,7 @@ export default defineConfig({
            "purpose": "maskable"
            }
        ],
-       "start_url": "/",
+       "start_url": ".",
        "display": "standalone",
        "theme_color": "#000000",
        "background_color": "#ffffff"
