@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 
 export default defineConfig({
-  base: process.env.BASE_URL || '/',
+  base: '/meet/',
  plugins: [
    react(),
    VitePWA({
@@ -37,7 +37,7 @@ export default defineConfig({
            "purpose": "maskable"
            }
        ],
-       "start_url": "/",
+       "start_url": "/meet",
        "display": "standalone",
        "theme_color": "#000000",
        "background_color": "#ffffff"
