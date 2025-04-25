@@ -27,7 +27,7 @@
         "purpose": "maskable"
         }
     ],
-    "start_url": "/meet",
+    "start_url": "/meet/",
     "display": "standalone",
     "theme_color": "#000000",
     "background_color": "#ffffff"
