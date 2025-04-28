@@ -1,32 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Meet App - Project README</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2rem;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      color: #2c3e50;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code {
-      background-color: #f4f4f4;
-      padding: 2px 5px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-  </style>
-</head>
+  </head>
 <body>
 
   <h1>Meet App</h1>
