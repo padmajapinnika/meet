@@ -1,70 +1,109 @@
-# React + Vite
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meet App - Project README</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <h1>Meet App</h1>
 
-Currently, two official plugins are available:
+  <p><strong>Meet App</strong> is a <strong>React-based Progressive Web Application (PWA)</strong> that allows users to browse and filter events by city. It offers an interactive UI to search for events, visualize event data, and supports offline usage. The app integrates with the <strong>Google Calendar API</strong> and uses <strong>OAuth 2.0</strong> for secure authentication.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <h2>✨ Features</h2>
+  <ul>
+    <li><strong>City Search</strong>: Users can search and filter events based on the selected city.</li>
+    <li><strong>Event List</strong>: Displays a list of upcoming events with details.</li>
+    <li><strong>Number of Events Selector</strong>: Users can customize how many events they want to view.</li>
+    <li><strong>Alerts</strong>: Provides users with information, warnings, and error messages.</li>
+    <li><strong>Charts</strong>:
+      <ul>
+        <li>Visualizes the number of events per city.</li>
+        <li>Displays event genres in a pie chart.</li>
+      </ul>
+    </li>
+    <li><strong>OAuth Authentication</strong>: Secure login via Google.</li>
+    <li><strong>Offline Support</strong>: Fetches cached events when offline and alerts users when connectivity is lost.</li>
+  </ul>
 
-task4.1
+  <h2>🔧 Technologies Used</h2>
+  <ul>
+    <li>React (with Hooks)</li>
+    <li>Vite (for fast builds and development)</li>
+    <li>Recharts (for data visualization)</li>
+    <li>Workbox (for PWA functionality and offline support)</li>
+    <li>OAuth 2.0 (for authentication)</li>
+    <li>Jest, Puppeteer, and React Testing Library (for testing)</li>
+    <li>HTML5, CSS3, JavaScript</li>
+  </ul>
 
-Feature 2: Show/Hide Event Details
-As a user,
-I should be able to expand an event
-so that I can see more details about it.
-Gherkin
-Given the user sees a collapsed event element
-When the user clicks the “Show Details” button
-Then the event element should expand to show more details
-As a user,
-I should be able to collapse an expanded event
-so that I can hide details I no longer need.
-Gherkin
-Given the user sees an expanded event element
-When the user clicks the “Hide Details” button
-Then the event element should collapse and hide the details
+  <h2>🚀 Installation</h2>
+  <ol>
+    <li>Clone the repository:
+      <pre><code>git clone https://github.com/padmajapinnika/meet.git
+cd meet</code></pre>
+    </li>
+    <li>Install dependencies:
+      <pre><code>npm install</code></pre>
+    </li>
+  </ol>
 
-Feature 3: Specify Number of Events
-As a user,
-I should be able to view 32 events by default
-so that I’m not overwhelmed with too much data initially.
-Gherkin
-Given the user has not changed the number of events
-When the event list is displayed
-Then 32 events should be shown by default
-As a user,
-I should be able to change the number of events shown
-so that I can control how much information I want to see.
-Gherkin
-Given the user wants to see more or fewer events
-When the user enters a new number into the event count input
-Then that number of events should be displayed in the event list
+  <h2>🖥️ Running the Application Locally</h2>
+  <p>Start the development server:</p>
+  <pre><code>npm run dev</code></pre>
+  <p>Open your browser and navigate to <a href="http://localhost:5173/" target="_blank">http://localhost:5173/</a>.</p>
 
-Feature 4: Use the App When Offline
-As a user,
-I should be able to see cached event data when offline
-so that I can still view information without an internet connection.
-Gherkin
-Given the user has previously loaded event data
-And the user goes offline
-When the user opens the app
-Then cached event data should be displayed
+  <h2>🔐 Authentication & API</h2>
+  <ul>
+    <li>Uses Google OAuth 2.0 for authentication.</li>
+    <li>Fetches events from the Google Calendar API.</li>
+    <li>If unauthorized, users are redirected to the login page.</li>
+    <li>Event data is cached locally using <code>localStorage</code> for offline use.</li>
+  </ul>
 
-Feature 5: Add an App Shortcut to the Home Screen
-As a user,
-I should be able to install the Meet app on my device
-so that I can easily access it from my home screen like a native app.
-Gherkin
-Given the user is using a supported browser
-When the user chooses to install the Meet app
-Then the app should be added to the user’s home screen
+  <h2>📊 Data Visualization</h2>
+  <ul>
+    <li><strong>CityEventsChart</strong>: A scatter plot showing the number of events in different cities.</li>
+    <li><strong>EventGenresChart</strong>: A pie chart displaying the distribution of event genres.</li>
+  </ul>
 
-Feature 6: Display Charts Visualizing Event Details
-As a user,
-I should be able to see a chart of the number of upcoming events in each city
-so that I can visually compare how active different cities are.
-Gherkin
-Given the user is viewing the main page of the app
-When events from different cities are loaded
-Then a chart should display the number of events per city
+  <h2>📦 Deployment</h2>
+  <p>Build the app:</p>
+  <pre><code>npm run build</code></pre>
+  <p>Deploy using GitHub Pages or Vercel.</p>
+
+  <h2>🔮 Future Enhancements</h2>
+  <ul>
+    <li>Add full user authentication for personalized event lists.</li>
+    <li>Implement dark mode theme.</li>
+    <li>Enhance event filtering and search capabilities.</li>
+  </ul>
+
+  <h2>📄 License</h2>
+  <p>This project is licensed under the MIT License.</p>
+
+</body>
+</html>
